@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ArrayList<String> QuizSubject;
     DatabaseReference dref= FirebaseDatabase.getInstance().getReference();
+    Button confirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         l1 = (LinearLayout) findViewById(R.id.l1);
         l2 = (LinearLayout) findViewById(R.id.l2);
         l3 = (LinearLayout) findViewById(R.id.l3);
+        confirm = (Button) findViewById(R.id.btnConfirm);
+        confirm.setVisibility(View.GONE);
         subjectSpinner = findViewById(R.id.spinnerSubject);
         l2.setVisibility(View.GONE);
         l3.setVisibility(View.GONE);
@@ -63,7 +68,16 @@ public class MainActivity extends AppCompatActivity {
                             if(c>1){
                                 l2.setVisibility(View.GONE);
                                 l3.setVisibility(View.VISIBLE);
+                                confirm.setVisibility(View.VISIBLE);
                                 retrivedata();
+
+                                confirm.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        subject = subjectSpinner.getSelectedItem().toString();
+                                        Toast.makeText(getApplicationContext() , subject , Toast.LENGTH_SHORT).show();
+                                    }
+                                });
 
                             }
                         }
@@ -74,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     for (DataSnapshot subject : dataSnapshot.getChildren()) {
 
-                                        QuizSubject.add(subject.getKey().toUpperCase());
+                                        QuizSubject.add(subject.getKey());
                                     }
                                     adapter.notifyDataSetChanged();
 

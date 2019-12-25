@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">SmartNoticeBoard</string>
     <string-array name="departments">
+        <item>Select Department</item>
         <item>Electrical</item>
         <item>Computer</item>
         <item>Mechanical</item>
     </string-array>
     <string-array name="semesters">
+        <item>Select Semester</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>

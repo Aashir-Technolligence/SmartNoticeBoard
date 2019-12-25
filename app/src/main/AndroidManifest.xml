@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddSemester">
-
-        </activity>
+        <activity android:name=".UploadNotice"></activity>
+        <activity android:name=".AddSemester"></activity>
         <activity android:name=".Register" />
         <activity android:name=".Signup" />
         <activity android:name=".Login" />
