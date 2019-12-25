@@ -16,7 +16,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
-        android:textSize="38dp"></TextView>
+        android:textSize="33dp"></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_marginTop="5dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="38dp"></TextView>
+        android:textSize="30dp"></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         android:textColor="@color/colorPrimary"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
-        android:textSize="30dp"></TextView>
+        android:textSize="25dp"></TextView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -48,6 +48,7 @@
         android:textColorHint="@color/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
+            android:textColor="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -55,7 +56,7 @@
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_height="wrap_content"
@@ -65,6 +66,7 @@
         android:textColorHint="@color/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
+            android:textColor="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -75,6 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/login"
+        android:padding="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
@@ -85,6 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sigup"
+        android:padding="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
