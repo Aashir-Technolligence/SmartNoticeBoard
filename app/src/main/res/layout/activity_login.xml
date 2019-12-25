@@ -16,7 +16,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
-        android:textSize="40dp"></TextView>
+        android:textSize="38dp"></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_marginTop="5dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="40dp"></TextView>
+        android:textSize="38dp"></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
