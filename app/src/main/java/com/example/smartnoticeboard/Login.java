@@ -17,19 +17,19 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        btnLogin=(Button) findViewById(R.id.login);
-        btnSignup=(Button) findViewById(R.id.sigup);
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Login.this,Signup.class));
-            }
-        });
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v,"Login Click", Snackbar.LENGTH_LONG).show();
-            }
-        });
+//        btnLogin=(Button) findViewById(R.id.login);
+//        btnSignup=(Button) findViewById(R.id.sigup);
+//        btnSignup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(Login.this,Signup.class));
+//            }
+//        });
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Snackbar.make(v,"Login Click", Snackbar.LENGTH_LONG).show();
+//            }
+//        });
     }
 }
