@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "197163352867",
+    "firebase_url": "https://smartnoticeboard-67e69.firebaseio.com",
+    "project_id": "smartnoticeboard-67e69",
+    "storage_bucket": "smartnoticeboard-67e69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197163352867:android:7d475b703891ad14c18296",
+        "android_client_info": {
+          "package_name": "com.example.smartnoticeboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197163352867-8uh0bhbriarlbrh6a0pa5jvarmb07geu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartnoticeboard",
+            "certificate_hash": "fd5cb9c2ac581179c03a3690e42f6b93f8187f01"
+          }
+        },
+        {
+          "client_id": "197163352867-2nuh232g3jsrfl5aoetp53a08eekm65j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4MWeetnyQvsiU-sB6mAxOLBkbJa5PaPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197163352867-2nuh232g3jsrfl5aoetp53a08eekm65j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
