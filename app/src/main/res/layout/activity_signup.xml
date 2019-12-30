@@ -32,6 +32,7 @@
         android:textColorHint="@color/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
+            android:inputType="textEmailAddress"
             android:textColor="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -40,7 +41,7 @@
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_height="wrap_content"
@@ -50,6 +51,7 @@
         android:textColorHint="@color/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
+            android:inputType="textPassword"
             android:textColor="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -62,23 +64,36 @@
         android:layout_height="wrap_content"
         android:id="@+id/sigup"
         android:padding="20dp"
+        app:cornerRadius="50dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:text="Sign Up">
 
     </com.google.android.material.button.MaterialButton>
-    <com.google.android.material.button.MaterialButton
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/login"
-        android:padding="20dp"
-        android:layout_marginTop="20dp"
-
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:text="Log in">
-
-    </com.google.android.material.button.MaterialButton>
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already Have Account? "
+            android:textColor="#696969"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/login"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            />
+    </LinearLayout>
 
 </LinearLayout>

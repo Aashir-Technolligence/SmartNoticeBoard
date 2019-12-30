@@ -8,10 +8,12 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
-    Button btnLogin,btnSignup;
+    TextView btnLogin;
+    Button btnSignup;
     EditText email,password;
     boolean check;
 
@@ -19,7 +21,7 @@ public class Signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        btnLogin=(Button) findViewById(R.id.login);
+        btnLogin=(TextView) findViewById(R.id.login);
         btnSignup=(Button) findViewById(R.id.sigup);
         email=(EditText) findViewById(R.id.email);
         password=(EditText) findViewById(R.id.password);
