@@ -55,7 +55,14 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Signup.this,Login.class));
+                finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Signup.this,Login.class));
+        finish();
     }
 }

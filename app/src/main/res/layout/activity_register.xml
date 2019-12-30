@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/profileText"
         android:text="Enter Profile Data"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#424242"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="30dp"></TextView>
@@ -38,7 +38,7 @@
         android:textColorHint="@color/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -57,7 +57,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/contact"
             android:inputType="number"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -76,7 +76,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/age"
             android:inputType="number"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -94,7 +94,7 @@
         android:textColorHint="@color/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/department"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
