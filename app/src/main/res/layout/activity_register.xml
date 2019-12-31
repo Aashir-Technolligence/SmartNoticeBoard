@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/profileText"
         android:text="Enter Profile Data"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorMaterialPrimary"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="30dp"></TextView>
@@ -34,11 +34,11 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Enter Name"
-        app:boxStrokeColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary">
+        app:boxStrokeColor="@color/colorMaterialPrimary"
+        android:textColorHint="@color/colorMaterialPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -52,11 +52,12 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Enter Contact#"
-        app:boxStrokeColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary">
+        app:boxStrokeColor="@color/colorMaterialPrimary"
+        android:textColorHint="@color/colorMaterialPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/contact"
-            android:textColor="@color/colorPrimary"
+            android:inputType="number"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -70,11 +71,12 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Enter Age"
-        app:boxStrokeColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary">
+        app:boxStrokeColor="@color/colorMaterialPrimary"
+        android:textColorHint="@color/colorMaterialPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/age"
-            android:textColor="@color/colorPrimary"
+            android:inputType="number"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -88,11 +90,11 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Enter Department"
-        app:boxStrokeColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary">
+        app:boxStrokeColor="@color/colorMaterialPrimary"
+        android:textColorHint="@color/colorMaterialPrimary">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/department"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#212121"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -102,6 +104,7 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cornerRadius="50dp"
         android:id="@+id/register"
         android:padding="20dp"
         android:layout_marginTop="40dp"
