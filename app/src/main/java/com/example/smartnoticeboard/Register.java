@@ -44,19 +44,19 @@ public class Register extends AppCompatActivity {
                 String Age = age.getText().toString();
                 String Contact = contact.getText().toString();
                 String Department = department.getText().toString();
-                if(Name.equals(null)){
+                if(Name.equals("")){
                     name.setError("Enter valid name");
                     name.setFocusable(true);
                 }
-                else if(Age.equals(null)){
+                else if(Age.equals("")){
                     age.setError("Enter valid age");
                     age.setFocusable(true);
                 }
-                else if(Contact.equals(null)){
+                else if(Contact.equals("")){
                     contact.setError("Enter valid contact number");
                     contact.setFocusable(true);
                 }
-                else if(Department.equals(null)){
+                else if(Department.equals("")){
                     department.setError("Enter valid department");
                     department.setFocusable(true);
                 }

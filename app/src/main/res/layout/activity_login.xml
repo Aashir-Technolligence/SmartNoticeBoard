@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/uniName"
         android:text="HITEC UNIVERSITY"
-        android:textColor="#424242"
+        android:textColor="@color/colorMaterialPrimary"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
         android:textSize="30dp"></TextView>
@@ -23,7 +23,7 @@
         android:id="@+id/uniLocation"
         android:text="TAXILA"
         android:layout_marginTop="5dp"
-        android:textColor="#424242"
+        android:textColor="@color/colorMaterialPrimary"
         android:textStyle="bold"
         android:textSize="30dp"></TextView>
     <TextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/appName"
         android:text="SMART NOTICE BOARD"
-        android:textColor="#424242"
+        android:textColor="@color/colorMaterialPrimary"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="25dp"></TextView>

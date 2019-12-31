@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/appName"
         android:text="SMART NOTICE BOARD"
-        android:textColor="#424242"
+        android:textColor="@color/colorMaterialPrimary"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="30dp"></TextView>
