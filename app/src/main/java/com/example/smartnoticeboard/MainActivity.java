@@ -3,6 +3,7 @@ package com.example.smartnoticeboard;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -75,7 +76,13 @@ public class MainActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(View v) {
                                         subject = subjectSpinner.getSelectedItem().toString();
-                                        Toast.makeText(getApplicationContext() , subject , Toast.LENGTH_SHORT).show();
+
+                                        Intent i = new Intent(MainActivity.this , UploadNotice.class);
+                                        i.putExtra("Sub" , subject);
+                                        i.putExtra("Dept" , department);
+                                        i.putExtra("Sem" , semester);
+                                        startActivity(i);
+                                        //Toast.makeText(getApplicationContext() , subject +" " +department + " " + semester , Toast.LENGTH_SHORT).show();
                                     }
                                 });
 

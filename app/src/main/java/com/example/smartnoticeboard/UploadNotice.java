@@ -51,10 +51,17 @@ public class UploadNotice extends AppCompatActivity {
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
     final StorageReference storageReference = FirebaseStorage.getInstance().getReference();//returns root path
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_notice);
+        Intent i = getIntent();
+        final String sem = i.getStringExtra("Sem");
+        final String dep = i.getStringExtra("Dept");
+        final String sub = i.getStringExtra("Sub");
+        Toast.makeText(getApplicationContext() , sem +" " +dep + " " + sub , Toast.LENGTH_SHORT).show();
+        final String id = "1"; //FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         btnSelect = findViewById(R.id.btnselect);
         btnUpload = findViewById(R.id.btnupload);
@@ -80,6 +87,36 @@ public class UploadNotice extends AppCompatActivity {
             public void onClick(View v) {
                 if (ContextCompat.checkSelfPermission(UploadNotice.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     selectpdf();
+//                    if (!title.getText().toString().isEmpty()) {
+//                        if (count1 >= 1) {//user has selected the file
+//
+//                            progressDialog.show();
+//                            final String fileName = System.currentTimeMillis() + ".pdf";
+//                            storageReference.child("UploadsFile/" + fileName).putFile(pdfUri)
+//                                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                                        @Override
+//                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                                            String url = taskSnapshot.getUploadSessionUri().toString();//return the url of uploaded file
+//                                            reference.child("Notice").child(dep).child(sem).child(sub).child(id).child("fileUrl").setValue(url);
+//
+//                                        }
+//                                    }).addOnFailureListener(new OnFailureListener() {
+//                                @Override
+//                                public void onFailure(@NonNull Exception e) {
+//                                    Toast.makeText(UploadNotice.this, "file not successfully uploaded...", Toast.LENGTH_LONG).show();
+//
+//                                }
+//                            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+//                                @Override
+//                                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+//                                    //track the progress of our upload
+//                                    int currentprogress = (int) (100 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+//                                    progressDialog.setProgress(currentprogress);
+//                                }
+//                            });
+//                        }
+//                    } else
+//                        Toast.makeText(UploadNotice.this, "select a file", Toast.LENGTH_LONG).show();
 
                 } else {
                     ActivityCompat.requestPermissions(UploadNotice.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
@@ -89,75 +126,41 @@ public class UploadNotice extends AppCompatActivity {
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!title.getText().toString().isEmpty()) {
-                    if (count1 >= 1) {//user has selected the file
 
-                        if (count >= 1) {
-                            progressDialog.show();
-                            final String id = "1"; //FirebaseAuth.getInstance().getCurrentUser().getUid();
-                            final String fileName = System.currentTimeMillis() + ".pdf";
-                            storageReference.child("UploadsFile/" + fileName).putFile(pdfUri)
-                                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                        @Override
-                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                                String url = taskSnapshot.getUploadSessionUri().toString();//return the url of uploaded file
-                                            reference.child("Notice").child(id).child("fileUrl").setValue(url);
-                                            final String push = FirebaseDatabase.getInstance().getReference().child("Services").push().getKey();
-                                            StorageReference fileReference = storageReference.child("images/" + push);
-                                            fileReference.putFile(filePath)
-                                                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                                        @Override
-                                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                                            //Toast.makeText(getApplicationContext(), "Uploaded", Toast.LENGTH_SHORT).show();
-                                                            if (filePath != null) {
-                                                                Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-                                                                while (!urlTask.isSuccessful()) ;
-                                                                Uri downloadUrl = urlTask.getResult();
+                    if (count >= 1) {
+                        final String push = FirebaseDatabase.getInstance().getReference().child("UploadNotice").push().getKey();
+                        StorageReference fileReference = storageReference.child("images/" + push);
+                        fileReference.putFile(filePath)
+                                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        //Toast.makeText(getApplicationContext(), "Uploaded", Toast.LENGTH_SHORT).show();
+                                        if (filePath != null) {
+                                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+                                            while (!urlTask.isSuccessful()) ;
+                                            Uri downloadUrl = urlTask.getResult();
 
-                                                                reference.child("Notice").child(id).child("id").setValue(id);
-                                                                reference.child("Notice").child(id).child("title").setValue(title.getText().toString());
-                                                                reference.child("Notice").child(id).child("imgUrl").setValue(downloadUrl);
+                                            reference.child("Notice").child(dep).child(sem).child(sub).child(id).child("id").setValue(id);
+                                            reference.child("Notice").child(dep).child(sem).child(sub).child(id).child("title").setValue(title.getText().toString());
+                                            reference.child("Notice").child(dep).child(sem).child(sub).child(id).child("imgUrl").setValue(downloadUrl);
 
 
-                                                                progressDialog.dismiss();
-                                                                Toast.makeText(getApplicationContext(), "Your notice is saved in db.", Toast.LENGTH_LONG).show();
-
-                                                            }
-                                                        }
-                                                    })
-                                                    .addOnFailureListener(new OnFailureListener() {
-                                                        @Override
-                                                        public void onFailure(@NonNull Exception e) {
-                                                            Toast.makeText(getApplicationContext(), "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                                                        }
-                                                    });
-
+                                            progressDialog.dismiss();
+                                            Toast.makeText(getApplicationContext(), "Your notice is saved in db.", Toast.LENGTH_LONG).show();
 
                                         }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(UploadNotice.this, "file not successfully uploaded...", Toast.LENGTH_LONG).show();
-
-                                }
-                            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                                    //track the progress of our upload
-//                                    int currentprogress = (int) (100 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-//                                    progressDialog.setProgress(currentprogress);
-
-
-                                }
-                            });
-
-                        } else
-                            Toast.makeText(UploadNotice.this, "select an iamge", Toast.LENGTH_LONG).show();
-                    } else
-                        Toast.makeText(UploadNotice.this, "select a file", Toast.LENGTH_LONG).show();
-
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(getApplicationContext(), "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }
+                    else
+                        Toast.makeText(UploadNotice.this, "select an iamge", Toast.LENGTH_LONG).show();
                 }
-            }
         });
 
     }
@@ -216,13 +219,13 @@ public class UploadNotice extends AppCompatActivity {
                 e.printStackTrace();
             }
         }//check weather user has selected a file of not
-        if (requestCode == 86 && resultCode == RESULT_OK && data != null) {
-            pdfUri = data.getData();//return the uri of selected file
-            filename.setText("File is selected: " + data.getData().getLastPathSegment());
-            count1 = 1;
-        } else {
-            Toast.makeText(UploadNotice.this, "please select the file", Toast.LENGTH_LONG).show();
-        }
+//        if (requestCode == 86 && resultCode == RESULT_OK && data != null) {
+//            pdfUri = data.getData();//return the uri of selected file
+//            filename.setText("File is selected: " + data.getData().getLastPathSegment());
+//            count1 = 1;
+//        } else {
+//            Toast.makeText(UploadNotice.this, "please select the file", Toast.LENGTH_LONG).show();
+//        }
 
     }
 }
