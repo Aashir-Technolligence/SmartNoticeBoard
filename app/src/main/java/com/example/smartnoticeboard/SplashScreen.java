@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -16,14 +17,17 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_splash_screen );
         ImageView imageView = findViewById( R.id.imagelogo );
+        TextView  txtName = findViewById( R.id.txtName );
         Animation animation = AnimationUtils.loadAnimation( getApplicationContext(),R.anim.fade );
+        Animation animation1 = AnimationUtils.loadAnimation( getApplicationContext(),R.anim.textanimation );
         imageView.startAnimation( animation );
+        txtName.startAnimation( animation1 );
 
         Thread timer = new Thread(  ) {
             @Override
             public void run() {
                 try {
-                    sleep( 4000 );
+                    sleep( 7000 );
 
                     SharedPreferences prefs = getSharedPreferences("Log", MODE_PRIVATE);
                     boolean isLoggedIn = prefs.getBoolean("isLoggedIn", false);
