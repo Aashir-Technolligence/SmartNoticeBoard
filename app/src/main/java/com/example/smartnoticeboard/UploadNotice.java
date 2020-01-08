@@ -127,6 +127,7 @@ public class UploadNotice extends AppCompatActivity {
 
                 if (count == 1) {
                     progressDialog.show();
+                    //
                     final String push = FirebaseDatabase.getInstance().getReference().child("UploadNotice").push().getKey();
                     StorageReference fileReference = storageReference.child("images/" + push);
                     fileReference.putFile(filePath)
