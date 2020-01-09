@@ -14,5 +14,11 @@
         <item name="colorPrimaryDark">@color/colorMaterialPrimaryDark</item>
         <item name="colorAccent">@color/colorMaterialAccent</item>
     </style>
+    <style name="AppTheme3" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorMaterialPrimary</item>
+        <item name="colorPrimaryDark">@color/colorMaterialPrimaryDark</item>
+        <item name="colorAccent">@color/colorMaterialAccent</item>
+    </style>
 
 </resources>
