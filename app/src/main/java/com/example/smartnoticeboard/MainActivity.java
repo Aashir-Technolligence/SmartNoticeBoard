@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ArrayList<String> QuizSubject;
     DatabaseReference dref= FirebaseDatabase.getInstance().getReference();
-    Button confirm;
+    Button confirm , AddSubject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +41,20 @@ public class MainActivity extends AppCompatActivity {
         l1 = (LinearLayout) findViewById(R.id.l1);
         l2 = (LinearLayout) findViewById(R.id.l2);
         l3 = (LinearLayout) findViewById(R.id.l3);
+        AddSubject = (Button) findViewById(R.id.btnAddSubject);
         confirm = (Button) findViewById(R.id.btnConfirm);
         confirm.setVisibility(View.GONE);
         subjectSpinner = findViewById(R.id.spinnerSubject);
         l2.setVisibility(View.GONE);
         l3.setVisibility(View.GONE);
 
+        AddSubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this , AddSemester.class);
+                startActivity(i);
+            }
+        });
         QuizSubject = new ArrayList<>();
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,QuizSubject);
         subjectSpinner.setAdapter(adapter );

@@ -14,33 +14,24 @@ public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_splash_screen );
-        ImageView imageView = findViewById( R.id.imagelogo );
-        TextView  txtName = findViewById( R.id.txtName );
-        Animation animation = AnimationUtils.loadAnimation( getApplicationContext(),R.anim.fade );
-        Animation animation1 = AnimationUtils.loadAnimation( getApplicationContext(),R.anim.textanimation );
-        imageView.startAnimation( animation );
-        txtName.startAnimation( animation1 );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash_screen);
+        ImageView imageView = findViewById(R.id.imagelogo);
+        TextView txtName = findViewById(R.id.txtName);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade);
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.textanimation);
+        imageView.startAnimation(animation);
+        txtName.startAnimation(animation1);
 
-        Thread timer = new Thread(  ) {
+        Thread timer = new Thread() {
             @Override
             public void run() {
                 try {
-                    sleep( 7000 );
+                    sleep(7000);
 
-                    SharedPreferences prefs = getSharedPreferences("Log", MODE_PRIVATE);
-                    boolean isLoggedIn = prefs.getBoolean("isLoggedIn", false);
-                    if (isLoggedIn) {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class );
-                        startActivity( intent );
-                        finish();
-                    } else {
-                        Intent intent = new Intent(getApplicationContext(), Login.class );
-                        startActivity( intent );
-                        finish();
-                    }
-
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                    startActivity(intent);
+                    finish();
 
 
                 } catch (InterruptedException e) {
