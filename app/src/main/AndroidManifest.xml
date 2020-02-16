@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UploadNotice">
-
-        </activity>
-        <activity android:name=".SplashScreen"
+        <activity android:name=".NoticeDetail"></activity>
+        <activity android:name=".StudentActivity" />
+        <activity android:name=".UploadNotice" />
+        <activity
+            android:name=".SplashScreen"
             android:theme="@style/AppTheme3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,21 +24,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddSemester"></activity>
+        <activity android:name=".AddSemester" />
         <activity
             android:name=".Register"
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".Signup"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".Login"
-            android:theme="@style/AppTheme2">
-
-        </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Login extends AppCompatActivity {
-    Button btnLogin;
+    Button btnLogin , studentlogin;
     TextView btnSignup;
     EditText email,password;
     ProgressDialog progressDialog;
@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btnLogin=(Button) findViewById(R.id.login);
+        studentlogin=(Button) findViewById(R.id.studentlogin);
         btnSignup=(TextView) findViewById(R.id.sigup);
         email=(EditText) findViewById(R.id.email);
         password=(EditText) findViewById(R.id.password);
@@ -37,6 +38,13 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this,Signup.class));
+                finish();
+            }
+        });
+        studentlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this,StudentActivity.class));
                 finish();
             }
         });
