@@ -35,7 +35,7 @@
             <com.github.barteksc.pdfviewer.PDFView
                 android:id="@+id/pdfView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></com.github.barteksc.pdfviewer.PDFView>
+                android:layout_height="45dp"></com.github.barteksc.pdfviewer.PDFView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

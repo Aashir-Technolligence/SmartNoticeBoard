@@ -59,15 +59,6 @@ public class Login extends AppCompatActivity {
                 }else {
                     progressDialog.show();
                     firbaseAuthenticationClass.LoginUser(EMAIL,PASSWORD, Login.this, progressDialog);
-//                    if(check==true) {
-//                        startActivity(new Intent(Login.this, MainActivity.class));
-//                        Toast.makeText(getApplicationContext(), "return true", Toast.LENGTH_SHORT).show();
-//                    }
-//                    else{
-//                        Toast.makeText(getApplicationContext(), "return false", Toast.LENGTH_SHORT).show();
-//
-//                    }
-
                 }
             }
         });

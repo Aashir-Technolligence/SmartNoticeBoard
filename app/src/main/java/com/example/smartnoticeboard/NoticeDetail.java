@@ -48,7 +48,8 @@ public class NoticeDetail extends AppCompatActivity {
                             name.setText(dataSnapshot1.child("name").getValue().toString());
                             Picasso.get().load(dataSnapshot1.child("imgUrl").getValue().toString()).into(img);
                             Uri pdf = Uri.parse(dataSnapshot1.child("fileUrl").getValue().toString());
-                            pdfview.fromUri(pdf);
+                            pdfview.fromUri(pdf).load();
+
                         } else {
                             Toast.makeText(getApplicationContext(), "No notice found.", Toast.LENGTH_LONG).show();
                         }
